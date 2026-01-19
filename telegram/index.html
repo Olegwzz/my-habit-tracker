@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Трекер привычек</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Трекер привычек</h1>
+            <div class="month-selector">
+                <button id="prevMonth" class="nav-btn">←</button>
+                <span id="currentMonth" class="month-display"></span>
+                <button id="nextMonth" class="nav-btn">→</button>
+            </div>
+        </header>
+
+        <div class="table-wrapper">
+            <table id="habitsTable">
+                <thead>
+                    <tr>
+                        <th class="habit-name-col">Привычка</th>
+                        <th colspan="31" class="days-header">Дни месяца</th>
+                        <th class="stats-col">%</th>
+                    </tr>
+                    <tr class="days-row">
+                        <th></th>
+                        <!-- Дни будут добавлены через JavaScript -->
+                    </tr>
+                </thead>
+                <tbody id="habitsBody">
+                    <!-- Привычки будут добавлены через JavaScript -->
+                </tbody>
+                <tfoot>
+                    <tr class="total-row">
+                        <td class="total-label">Общая эффективность</td>
+                        <td colspan="31"></td>
+                        <td class="total-percent" id="totalPercent">0%</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="controls">
+            <button id="addHabit" class="btn btn-primary">+ Добавить привычку</button>
+            <button id="viewCharts" class="btn btn-secondary">📊 Статистика</button>
+        </div>
+
+        <!-- Секция с диаграммами -->
+        <div id="chartsSection" class="charts-section hidden">
+            <h2>Анализ выполнения</h2>
+            
+            <div class="chart-container">
+                <h3>Общая статистика</h3>
+                <canvas id="overallChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>Выполнение по привычкам</h3>
+                <canvas id="habitsChart"></canvas>
+            </div>
+
+            <div class="chart-container">
+                <h3>Детальный анализ по дням</h3>
+                <canvas id="dailyChart"></canvas>
+            </div>
+
+            <button id="closeCharts" class="btn btn-primary">Закрыть статистику</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

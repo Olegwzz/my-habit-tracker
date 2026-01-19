@@ -1,0 +1,6 @@
+# Конфигурация бота
+# Токен бота (можно переопределить через переменную окружения BOT_TOKEN)
+BOT_TOKEN=8560639679:AAFh7Xy7mBmgxx9Rg6_1XAWbL9nYxuNHGII
+
+# URL Mini App (замените после размещения на сервере)
+WEB_APP_URL=https://yourdomain.com/habit-tracker/telegram/
